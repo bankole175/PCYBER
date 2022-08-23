@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 const service = () => {
   return (
-    <Container id={'services'} className={styles.mainService}>
-      <Row className="justify-content-between">
+    <Container id={'services'}>
+      <Row className="justify-content-between mt-5">
         {serviceData.map((service) => (
           <Col md={3} key={service.id} className={styles.service}>
             <div className={styles.icon}>
