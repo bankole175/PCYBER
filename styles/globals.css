@@ -42,12 +42,12 @@ a {
 }
 
 .row {
-  margin-right: 0;
-  margin-left: 0;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 
 .nav-link {
-  color: #bfc1c2;
+  color: #bfc1c2 !important;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -55,7 +55,7 @@ a {
 }
 
 .navbar-toggler {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 
 .btn-smcyber-primary {
