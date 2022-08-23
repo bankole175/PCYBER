@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import HeroBanner from '../components/HeroBanner'
 import Service from '../components/Service'
-import Metric from '../components/Metric/Metric'
+import Metric from '../components/Metric'
 
 const Home: NextPage = () => {
   return (
