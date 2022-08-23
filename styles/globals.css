@@ -18,10 +18,10 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #101213;
-  color: var(--white);
-  font-size: 16px;
+  font-family: 'Roboto', sans-serif !important;
+  background-color: #101213 !important;
+  color: var(--white) !important;
+  font-size: 16px !important;
 }
 
 a {
