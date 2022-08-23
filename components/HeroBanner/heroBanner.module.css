@@ -1,0 +1,38 @@
+.banner {
+  margin-top: 100px;
+}
+
+.floatBg {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.title {
+  font-size: 2.9rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1875rem;
+  line-height: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  color: #737375;
+}
+
+@media screen and (max-width: 500px) {
+  .hero {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px ) {
+  .hero {
+    width: 500px;
+  }
+
+  .heroIcon {
+    margin-right: -147px !important;
+  }
+}

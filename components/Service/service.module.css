@@ -1,0 +1,19 @@
+.service {
+  background-color: #202226;
+  border-radius: 0.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.8rem;
+  position: relative;
+  margin-top: 170px;
+}
+
+.icon {
+  position: absolute;
+  left: -25px;
+  top: 40%;
+  border-radius: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(90deg, rgba(119, 47, 26, 1) 100%, rgba(242, 166, 90, 1) 100%, rgba(242, 166, 90, 1) 100%);
+}

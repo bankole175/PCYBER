@@ -1,0 +1,40 @@
+.metric {
+  margin-top: 150px;
+  margin-bottom: 200px;
+  background-color: #202226;
+  border-radius: 0.5rem;
+  padding-top: 20px;
+  padding-bottom: 7px;
+}
+
+.metricValue {
+  color: var(--smcyberPrimaryColor);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.01rem;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  margin-right: 1rem;
+  margin-top: 0.6rem;
+}
+
+.social {
+  background-color: #4171c5;
+}
+
+.security {
+  background-color: #8357bf;
+}
+
+.incident {
+  background-color: #e5343e;
+}
+
+.success {
+  background-color: #6ece3f;
+}
+
