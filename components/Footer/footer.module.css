@@ -16,6 +16,11 @@
   color: var(--smcyberDirtyWhiteColor);
 }
 
+.a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 .a:hover {
   color: #ffffff;
 }
