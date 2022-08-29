@@ -1,0 +1,21 @@
+.logo {
+  margin-left: -11px
+}
+
+.aboutUs {
+  line-height: 30px;
+  color: var(--smcyberDirtyWhiteColor);
+}
+
+.item {
+  list-style: none;
+}
+
+.li {
+  display: block;
+  color: var(--smcyberDirtyWhiteColor);
+}
+
+.a:hover {
+  color: #ffffff;
+}

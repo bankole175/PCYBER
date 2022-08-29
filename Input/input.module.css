@@ -1,0 +1,37 @@
+.label {
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+}
+
+.formControl {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  padding: 11px 21px;
+  height: 50px;
+  width: 100%;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #666;
+  display: block;
+  transition: .2s;
+}
+
+.formControl:focus {
+  border: 2px solid #1a1a1a;
+  outline: none;
+}
+
+.textarea {
+  height: auto;
+}
+
+.noError {
+  border: 1px solid #1a1a1a;
+}
+
+.error {
+  border: 1px solid #e70f21;
+}

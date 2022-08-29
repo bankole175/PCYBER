@@ -4,10 +4,17 @@ import Header from '../components/Header'
 import HeroBanner from '../components/HeroBanner'
 import Service from '../components/Service'
 import Metric from '../components/Metric'
+import Section from '../components/Section'
+import AboutUs from '../components/AboutUs'
+import Footer from '../components/Footer'
+
+const listItems = ['Tiktok', 'Instagram', 'Facebook', 'Twitter', 'Web domains']
+const title =
+  'AI powered engine to continuously block potential attacks and protect social media accounts across'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="home">
       <Head>
         <title>SMCYBER</title>
         <meta name="description" content="smcyber" />
@@ -16,7 +23,15 @@ const Home: NextPage = () => {
       <Header />
       <HeroBanner />
       <Service />
+      <Section
+        img={'/images/socialSecurity.jpg'}
+        title={title}
+        bg={'gradient-dark'}
+        listItems={listItems}
+      />
       <Metric />
+      <AboutUs />
+      <Footer />
     </div>
   )
 }
