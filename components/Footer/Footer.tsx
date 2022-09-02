@@ -38,7 +38,7 @@ const Footer = (props: Props) => {
           </Col>
           <Col lg={2} className="mb-3">
             <Slide>
-              <p>Quick Links</p>
+              <p className="text-white">Quick Links</p>
 
               <p className={styles.li}>
                 <Link href="/">
@@ -64,7 +64,7 @@ const Footer = (props: Props) => {
           </Col>
           <Col lg={2} className="mb-3">
             <Slide direction={'right'}>
-              <p>Our Services</p>
+              <p className="text-white">Our Services</p>
 
               <p className={styles.li}>Dark Web Monitoring</p>
               <p className={styles.li}>Security Awareness Training</p>
@@ -73,8 +73,9 @@ const Footer = (props: Props) => {
           </Col>
           <Col lg={1} className="offset-lg-1 mb-3">
             <Slide direction={'right'}>
-              <p>Contact Us</p>
-              <div style={{ marginLeft: '-20px' }}>
+              <div className={styles.mln20}>
+                <p className="text-white">Contact Us</p>
+
                 <Button onClick={() => goTo('/contact-us')}>Contact Us</Button>
               </div>
             </Slide>

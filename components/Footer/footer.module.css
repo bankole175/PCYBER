@@ -24,3 +24,9 @@
 .a:hover {
   color: #ffffff;
 }
+
+@media screen and (min-width: 1000px) {
+  .mln20 {
+    margin-left: -20px
+  }
+}

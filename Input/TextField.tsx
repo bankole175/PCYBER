@@ -1,8 +1,18 @@
 import styles from './input.module.css'
 import { InputT } from '../utils/type'
+import { FC } from 'react'
+import { useForm } from '../hooks'
 
-export const TextField = (props: InputT) => {
-  const { type, required, label } = props
+export const TextField: FC<InputT> = ({
+  type = 'text',
+  required,
+  label,
+  value,
+  formObject,
+  error,
+  ...inputProps
+}) => {
+  const { handleChange, values, errors } = useForm()
   return (
     <>
       <label className={styles.label}>
@@ -10,10 +20,17 @@ export const TextField = (props: InputT) => {
         {required && '*'}
       </label>
       <input
-        type={type ? type : 'text'}
+        type={type}
+        {...inputProps}
+        onChange={(event) => handleChange(event, label, formObject)}
         className={`${styles.formControl} ${styles.noError}`}
         required={required}
       />
+      {(formObject?.[value]).length <= 0 && (
+        <p className="text-danger" style={{ marginTop: '-30px' }}>
+          {label} is required
+        </p>
+      )}
     </>
   )
 }

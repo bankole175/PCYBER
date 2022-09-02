@@ -4,8 +4,13 @@ import { SelectInput, TextArea, TextField } from '../../Input'
 import Button from '../Button'
 import styles from './contactUs.module.css'
 import { Zoom } from 'react-awesome-reveal'
+import emailjs, { init } from '@emailjs/browser'
+import React, { useEffect, useState } from 'react'
+import { ContactFormT } from '../../utils/type'
+import { useForm } from '../../hooks'
 
 const ContactUs = () => {
+  init('1AsgDhUYxtL7OsjYZ')
   const options = [
     { label: "Implementing SMCyber's WAAP Solution", value: 'solution' },
     { label: 'A Career at SMCyber', value: 'career' },
@@ -18,6 +23,33 @@ const ContactUs = () => {
       value: 'other',
     },
   ]
+
+  const [contactUsForm, setContactUsForm] = useState<ContactFormT>()
+  const { handleChange, values, errors, handleSubmit } = useForm()
+
+  const prepareContactUsForm = () => {
+    const contactForm = {
+      firstName: undefined,
+      lastName: undefined,
+      email: undefined,
+      phoneNumber: undefined,
+      protecting: undefined,
+      aboutUs: undefined,
+      learn: undefined,
+    }
+
+    setContactUsForm(contactForm)
+  }
+
+  useEffect(() => {
+    prepareContactUsForm()
+  }, [])
+
+  const submit = (e: React.MouseEvent) => {
+    e.preventDefault()
+    console.log('you')
+    emailjs.sendForm('service_okhi179', 'template_3e536ak', '').then()
+  }
 
   return (
     <>
@@ -36,18 +68,35 @@ const ContactUs = () => {
                 <span className="ms-2 text-dark">Send us a message</span>
               </span>
             </h6>
-            <form action="">
+            <form>
               <Row>
                 <Col lg={6}>
                   <TextField
+                    id={'firstName'}
+                    name={'firstName'}
+                    value={'firstName'}
+                    placeholder={'John'}
                     label={'First Name'}
                     type={'text'}
+                    formObject={contactUsForm}
+                    error={
+                      contactUsForm?.firstName &&
+                      contactUsForm?.firstName.length <= 0
+                    }
+                    onChange={(event) =>
+                      handleChange(event, 'label', contactUsForm)
+                    }
                     required={true}
                   />
                 </Col>
                 <Col lg={6}>
                   <TextField
+                    id={'lastName'}
+                    name={'lastName'}
+                    placeholder={'Doe'}
                     label={'Last Name'}
+                    value={'lastName'}
+                    formObject={contactUsForm}
                     type={'text'}
                     required={true}
                   />
@@ -55,12 +104,26 @@ const ContactUs = () => {
               </Row>
               <Row>
                 <Col lg={6}>
-                  <TextField label={'Email'} type={'email'} required={true} />
+                  <TextField
+                    id={'email'}
+                    name={'email'}
+                    value={'email'}
+                    placeholder={'johndoe@gmail.com'}
+                    label={'Email'}
+                    type={'email'}
+                    required={true}
+                    formObject={contactUsForm}
+                  />
                 </Col>
                 <Col lg={6}>
                   <TextField
+                    id={'phoneNumber'}
+                    name={'phoneNumber'}
+                    value={'phoneNumber'}
+                    placeholder={'+ 1 819 555 5555'}
                     label={'Phone Number'}
                     type={'tel'}
+                    formObject={contactUsForm}
                     required={true}
                   />
                 </Col>
@@ -71,15 +134,23 @@ const ContactUs = () => {
                 options={options}
               />
               <TextField
+                id={'aboutUs'}
+                name={'aboutUs'}
                 label={'How did you hear about us'}
-                type={'email'}
+                type={'text'}
+                value={contactUsForm?.aboutUs}
+                formObject={contactUsForm}
                 required={true}
               />
               <TextArea
+                name={'learn'}
+                id={'learn'}
                 label={'Anything specific you are looking to learn?'}
-                row={6}
+                rows={6}
+                formObject={contactUsForm}
+                value={contactUsForm?.learn}
               />
-              <Button>Send Message</Button>
+              <Button onClick={() => handleSubmit}>Send Message</Button>
             </form>
           </Container>
         </div>
