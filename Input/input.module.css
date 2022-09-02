@@ -19,7 +19,7 @@
   transition: .2s;
 }
 
-.formControl:focus {
+.noError:focus {
   border: 2px solid #1a1a1a;
   outline: none;
 }
@@ -34,4 +34,9 @@
 
 .error {
   border: 1px solid #e70f21;
+}
+
+.error:focus {
+  border: 2px solid #e70f21;
+  outline: none;
 }

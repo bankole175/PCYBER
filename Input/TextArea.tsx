@@ -20,10 +20,14 @@ export const TextArea: FC<TextAreaT> = ({
       </label>
       <textarea
         {...textAreaProps}
-        value={value}
         onChange={(event) => handleChange(event, label, formObject)}
         className={`${styles.formControl} ${styles.noError} ${styles.textarea}`}
       />
+      {errors[value as keyof typeof errors] && (
+        <p className="text-danger" style={{ marginTop: '-30px' }}>
+          {errors[value as keyof typeof errors]}
+        </p>
+      )}
     </>
   )
 }

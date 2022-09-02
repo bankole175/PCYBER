@@ -98,6 +98,10 @@ a {
   line-height: 35px;
 }
 
+.smcyber__menu {
+  color: #000000 !important;
+}
+
 .smcyber__control {
   border: 1px solid #1a1a1a !important;
   height: 50px;

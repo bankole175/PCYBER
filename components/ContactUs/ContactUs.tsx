@@ -24,7 +24,15 @@ const ContactUs = () => {
     },
   ]
 
-  const [contactUsForm, setContactUsForm] = useState<ContactFormT>()
+  const [contactUsForm, setContactUsForm] = useState<ContactFormT>({
+    firstName: undefined,
+    lastName: undefined,
+    email: undefined,
+    phoneNumber: undefined,
+    protecting: undefined,
+    aboutUs: undefined,
+    learn: undefined,
+  })
   const { handleChange, values, errors, handleSubmit } = useForm()
 
   const prepareContactUsForm = () => {
@@ -79,13 +87,6 @@ const ContactUs = () => {
                     label={'First Name'}
                     type={'text'}
                     formObject={contactUsForm}
-                    error={
-                      contactUsForm?.firstName &&
-                      contactUsForm?.firstName.length <= 0
-                    }
-                    onChange={(event) =>
-                      handleChange(event, 'label', contactUsForm)
-                    }
                     required={true}
                   />
                 </Col>
@@ -138,7 +139,7 @@ const ContactUs = () => {
                 name={'aboutUs'}
                 label={'How did you hear about us'}
                 type={'text'}
-                value={contactUsForm?.aboutUs}
+                value={'aboutUs'}
                 formObject={contactUsForm}
                 required={true}
               />
@@ -148,7 +149,7 @@ const ContactUs = () => {
                 label={'Anything specific you are looking to learn?'}
                 rows={6}
                 formObject={contactUsForm}
-                value={contactUsForm?.learn}
+                value={'learn'}
               />
               <Button onClick={() => handleSubmit}>Send Message</Button>
             </form>

@@ -23,12 +23,14 @@ export const TextField: FC<InputT> = ({
         type={type}
         {...inputProps}
         onChange={(event) => handleChange(event, label, formObject)}
-        className={`${styles.formControl} ${styles.noError}`}
+        className={`${styles.formControl} ${
+          errors[value as keyof typeof errors] ? styles.error : styles.noError
+        }`}
         required={required}
       />
-      {(formObject?.[value]).length <= 0 && (
+      {errors[value as keyof typeof errors] && (
         <p className="text-danger" style={{ marginTop: '-30px' }}>
-          {label} is required
+          {errors[value as keyof typeof errors]}
         </p>
       )}
     </>

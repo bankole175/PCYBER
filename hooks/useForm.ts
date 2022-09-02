@@ -11,24 +11,23 @@ export const useForm = () => {
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     name: string,
     value: any,
-    type: string,
+    label: string,
   ) => {
-    //A function to validate each input values
+    const type = event.target.attributes[0].value
 
     switch (type) {
       case 'text':
+      case 'tel':
+      case 'number':
         if (value.length <= 0) {
-          // we will set the error state
-
           setErrors({
             ...errors,
-            [name]: `${name} is required`,
+            [name]: `${label} is required`,
           })
         } else {
-          // set the error state empty or remove the error for username input
-
-          //omit function removes/omits the value from given object and returns a new object
-          setErrors(errors)
+          const errorUpdate = { ...errors }
+          delete errorUpdate[name as keyof typeof errorUpdate]
+          setErrors(errorUpdate)
         }
         break
 
@@ -43,7 +42,9 @@ export const useForm = () => {
             [name]: 'Enter a valid email address',
           })
         } else {
-          setErrors(errors)
+          const errorUpdate = { ...errors }
+          delete errorUpdate[name as keyof typeof errorUpdate]
+          setErrors(errorUpdate)
         }
         break
       default:
@@ -51,34 +52,28 @@ export const useForm = () => {
     }
   }
 
-  const handleSubmit = () => {
-    console.log(values, 'values')
+  const handleSubmit = (e: React.MouseEvent) => {
+    e.preventDefault()
+    console.log(errors, 'values')
   }
 
-  //A method to handle form inputs
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     label: string,
-    contact: ContactFormT | undefined,
+    formObject: ContactFormT,
   ) => {
-    console.log(event.target.attributes[0], 'event')
-    console.log(event, 'label')
     //To stop default events
     event.persist()
 
     let name = event.target.name
     let val = event.target.value
-    let type = event.target.attributes[0].value
-    console.log(type, 'type')
-    console.log(event, 'event')
 
-    validate(event, name, val, type)
+    console.log(event, 'heyyy')
 
-    if (contact) {
-      // @ts-ignore
-      contact[label] = val
-    }
-    //Let's set these values in state
+    validate(event, name, val, label)
+
+    formObject[name as keyof typeof formObject] = val
+
     setValues({
       ...values,
       [name]: val,
