@@ -5,14 +5,14 @@ import { useForm } from '../hooks'
 
 export const TextField: FC<InputT> = ({
   type = 'text',
-  required,
+  required = false,
   label,
   value,
   formObject,
   error,
   ...inputProps
 }) => {
-  const { handleChange, values, errors } = useForm()
+  const { handleChange, errors } = useForm()
   return (
     <>
       <label className={styles.label}>
@@ -22,7 +22,7 @@ export const TextField: FC<InputT> = ({
       <input
         type={type}
         {...inputProps}
-        onChange={(event) => handleChange(event, label, formObject)}
+        onChange={(event) => handleChange(event, label, formObject, required)}
         className={`${styles.formControl} ${
           errors[value as keyof typeof errors] ? styles.error : styles.noError
         }`}

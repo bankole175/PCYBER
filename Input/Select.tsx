@@ -1,15 +1,23 @@
 import styles from './input.module.css'
-import Select from 'react-select'
+import Select, { SingleValue } from 'react-select'
+import { FormObjectT } from '../utils/type'
+import React from 'react'
 
-type Props = {
+interface Props extends React.ComponentProps<'select'> {
+  id: string
   label: string
   options: { value: string; label: string }[]
+  formObject: FormObjectT
   isMulti?: boolean
   required?: boolean
 }
 
 export const SelectInput = (props: Props) => {
-  const { required, label, options, isMulti } = props
+  const { required, label, options, isMulti = false, formObject, id } = props
+
+  const handleChange = (event: SingleValue<any>) => {
+    formObject[id as keyof typeof formObject] = event.label
+  }
   return (
     <>
       <label className={styles.label}>
@@ -17,12 +25,14 @@ export const SelectInput = (props: Props) => {
         {required && '*'}
       </label>
       <Select
-        id={label}
+        instanceId={id}
+        id={id}
         classNamePrefix={'smcyber'}
         options={options}
         placeholder={'Please Select'}
+        onChange={(event) => handleChange(event)}
         isClearable={true}
-        isMulti={isMulti ? isMulti : false}
+        isMulti={isMulti}
       />
     </>
   )

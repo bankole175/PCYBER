@@ -1,16 +1,29 @@
 import styles from './button.module.css'
 import React from 'react'
+import { Spinner } from 'react-bootstrap'
 
 type Props = {
-  onClick?: (se: React.SyntheticEvent) => void
+  onClick?: (me: React.MouseEvent) => void
   children: React.ReactNode
+  isLoading: boolean
 }
 
 const Button = (props: Props) => {
-  const { children, onClick } = props
+  const { children, onClick, isLoading = false } = props
 
   return (
     <button onClick={onClick} className={styles.button}>
+      {isLoading && (
+        <Spinner
+          animation="border"
+          variant="light"
+          className="me-2"
+          role="status"
+          size="sm"
+        >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )}
       {children}
     </button>
   )

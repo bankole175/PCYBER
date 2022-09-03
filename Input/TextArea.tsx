@@ -4,13 +4,13 @@ import { FC } from 'react'
 import { useForm } from '../hooks'
 
 export const TextArea: FC<TextAreaT> = ({
-  required,
+  required = false,
   label,
   formObject,
   value,
   ...textAreaProps
 }) => {
-  const { handleChange, values, errors } = useForm()
+  const { handleChange, errors } = useForm()
 
   return (
     <>
@@ -20,7 +20,7 @@ export const TextArea: FC<TextAreaT> = ({
       </label>
       <textarea
         {...textAreaProps}
-        onChange={(event) => handleChange(event, label, formObject)}
+        onChange={(event) => handleChange(event, label, formObject, required)}
         className={`${styles.formControl} ${styles.noError} ${styles.textarea}`}
       />
       {errors[value as keyof typeof errors] && (

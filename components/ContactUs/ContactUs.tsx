@@ -5,9 +5,8 @@ import Button from '../Button'
 import styles from './contactUs.module.css'
 import { Zoom } from 'react-awesome-reveal'
 import emailjs, { init } from '@emailjs/browser'
-import React, { useEffect, useState } from 'react'
-import { ContactFormT } from '../../utils/type'
-import { useForm } from '../../hooks'
+import React, { useState } from 'react'
+import { FormObjectT } from '../../utils/type'
 
 const ContactUs = () => {
   init('1AsgDhUYxtL7OsjYZ')
@@ -24,39 +23,45 @@ const ContactUs = () => {
     },
   ]
 
-  const [contactUsForm, setContactUsForm] = useState<ContactFormT>({
+  const contactUsForm: FormObjectT = {
     firstName: undefined,
     lastName: undefined,
     email: undefined,
     phoneNumber: undefined,
-    protecting: undefined,
+    interest: undefined,
     aboutUs: undefined,
-    learn: undefined,
-  })
-  const { handleChange, values, errors, handleSubmit } = useForm()
-
-  const prepareContactUsForm = () => {
-    const contactForm = {
-      firstName: undefined,
-      lastName: undefined,
-      email: undefined,
-      phoneNumber: undefined,
-      protecting: undefined,
-      aboutUs: undefined,
-      learn: undefined,
-    }
-
-    setContactUsForm(contactForm)
+    message: undefined,
   }
 
-  useEffect(() => {
-    prepareContactUsForm()
-  }, [])
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  const clearContactUsForm = () => {
+    Array.from(document.querySelectorAll('input')).forEach(
+      (input) => (input.value = ''),
+    )
+    Array.from(document.querySelectorAll('textarea')).forEach(
+      (textarea) => (textarea.value = ''),
+    )
+  }
 
   const submit = (e: React.MouseEvent) => {
+    setIsLoading(true)
     e.preventDefault()
-    console.log('you')
-    emailjs.sendForm('service_okhi179', 'template_3e536ak', '').then()
+    let templateParams = {
+      from_name: `${contactUsForm.firstName} ${contactUsForm.lastName}`,
+    }
+
+    templateParams = { ...templateParams, ...contactUsForm }
+    emailjs.send('service_okhi179', 'template_3e536ak', templateParams).then(
+      () => {
+        clearContactUsForm()
+        setIsLoading(false)
+      },
+      (error) => {
+        setIsLoading(false)
+        console.log(error.text)
+      },
+    )
   }
 
   return (
@@ -130,9 +135,11 @@ const ContactUs = () => {
                 </Col>
               </Row>
               <SelectInput
-                label={'What are you protecting?'}
+                id={'interest'}
+                label={'I am interested in'}
                 required={true}
                 options={options}
+                formObject={contactUsForm}
               />
               <TextField
                 id={'aboutUs'}
@@ -141,17 +148,19 @@ const ContactUs = () => {
                 type={'text'}
                 value={'aboutUs'}
                 formObject={contactUsForm}
-                required={true}
+                required={false}
               />
               <TextArea
-                name={'learn'}
-                id={'learn'}
-                label={'Anything specific you are looking to learn?'}
+                name={'message'}
+                id={'message'}
+                label={'Message'}
                 rows={6}
                 formObject={contactUsForm}
-                value={'learn'}
+                value={'message'}
               />
-              <Button onClick={() => handleSubmit}>Send Message</Button>
+              <Button isLoading={isLoading} onClick={(event) => submit(event)}>
+                Send Message
+              </Button>
             </form>
           </Container>
         </div>
