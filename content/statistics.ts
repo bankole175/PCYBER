@@ -19,7 +19,7 @@ export const statistics = [
   },
   {
     id: 'security',
-    value: '50+',
+    value: '10+',
     text: 'Cyber security partners',
     img: '/icons/cyberSecurity.svg',
   },
