@@ -8,7 +8,7 @@
 }
 
 .metricValue {
-  color: var(--smcyberPrimaryColor);
+  color: var(--platformcyberPrimaryColor);
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 0.01rem;

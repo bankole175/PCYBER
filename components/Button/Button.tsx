@@ -5,7 +5,7 @@ import { Spinner } from 'react-bootstrap'
 type Props = {
   onClick?: (me: React.MouseEvent) => void
   children: React.ReactNode
-  isLoading: boolean
+  isLoading?: boolean
 }
 
 const Button = (props: Props) => {

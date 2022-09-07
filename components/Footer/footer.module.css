@@ -4,7 +4,7 @@
 
 .aboutUs {
   line-height: 30px;
-  color: var(--smcyberDirtyWhiteColor);
+  color: var(--platformcyberDirtyWhiteColor);
 }
 
 .item {
@@ -13,7 +13,7 @@
 
 .li {
   display: block;
-  color: var(--smcyberDirtyWhiteColor);
+  color: var(--platformcyberDirtyWhiteColor);
 }
 
 .a {

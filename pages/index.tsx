@@ -16,8 +16,8 @@ const Home: NextPage = () => {
   return (
     <div className="home">
       <Head>
-        <title>SMCYBER</title>
-        <meta name="description" content="smcyber" />
+        <title>PLATFORM CYBER</title>
+        <meta name="description" content="platformCyber" />
         <link rel="icon" href="/icons/logo.svg" />
       </Head>
       <Header />

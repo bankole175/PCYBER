@@ -7,9 +7,9 @@ import { Roll } from 'react-awesome-reveal'
 const service = () => {
   return (
     <Container id={'services'} className="mb-section">
-      <Row className="justify-content-between mt-5">
+      <Row className="justify-content-between mt-5" style={{ gap: 1 }}>
         {serviceData.map((service) => (
-          <Col lg={3} key={service.id}>
+          <Col lg={3} key={service.id} className={'mb-4'}>
             <Roll>
               <div className={styles.service}>
                 <div className={styles.icon}>

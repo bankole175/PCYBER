@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-  --smcyberPrimaryColor: #f06e18;
-  --smcyberLightColor: #f8e1c5;
-  --smcyberDirtyWhiteColor: #99999d;
+  --platformcyberPrimaryColor: #f06e18;
+  --platformcyberLightColor: #f8e1c5;
+  --platformcyberDirtyWhiteColor: #99999d;
   --white: #ffffff;
   --bgImage: url('https://s3.eu-west-2.amazonaws.com/edge.world/3a7faf58-3b1c-4f50-813a-7a3c2ec70f16/2022-08-26T01%3A16%3A44.507Z-bg-pattern.webp')
 }
@@ -51,7 +51,7 @@ a {
 }
 
 .text-smcyber-primary {
-  color: var(--smcyberPrimaryColor);
+  color: var(--platformcyberPrimaryColor);
 }
 
 .ms-n2 {
@@ -71,7 +71,7 @@ a {
 }
 
 .text-dirty-white {
-  color: var(--smcyberDirtyWhiteColor);
+  color: var(--platformcyberDirtyWhiteColor);
 }
 
 .mt-section {

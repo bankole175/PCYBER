@@ -14,7 +14,7 @@ const Header = () => {
         <Navbar.Brand href="/">
           <span className="d-flex align-items-center">
             <Image src="/icons/logo.svg" alt="" width={50} height={50} />
-            <span className="text-smcyber-primary ms-n2">SMCYBER</span>
+            <span className="text-smcyber-primary ms-n2">PLATFORMCYBER</span>
           </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

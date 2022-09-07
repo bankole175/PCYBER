@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 import emailjs, { init } from '@emailjs/browser'
 
 const Demo = () => {
-  init('1AsgDhUYxtL7OsjYZ')
+  init('EUEkJoJpRKpf6Rq1x')
   const options = [
     { label: 'API', value: 'api' },
     { label: 'Web Application', value: 'webApplication' },
@@ -49,7 +49,7 @@ const Demo = () => {
     }
 
     templateParams = { ...templateParams, ...demoForm }
-    emailjs.send('service_okhi179', 'template_ooj10iv', templateParams).then(
+    emailjs.send('service_4u0y851', 'template_6rg12c9', templateParams).then(
       () => {
         clearDemoForm()
         setIsLoading(false)
@@ -69,7 +69,7 @@ const Demo = () => {
           className={`d-inline-flex align-items-center cursor ${styles.logo}`}
         >
           <Image src="/icons/logo.svg" alt="" width={80} height={80} />
-          <span className="text-smcyber-primary ms-n2">SMCYBER</span>
+          <span className="text-smcyber-primary ms-n2">PLATFORMCYBER</span>
         </span>
       </Col>
       <Col className="bg-white">

@@ -7,7 +7,7 @@ const RequestADemo: NextPage = () => {
   return (
     <div className="demo">
       <Head>
-        <title>SMCYBER</title>
+        <title>PLATFORMCYBER</title>
         <meta name="description" content="smcyber" />
         <link rel="icon" href="/icons/logo.svg" />
       </Head>

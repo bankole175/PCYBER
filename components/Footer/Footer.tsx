@@ -25,10 +25,12 @@ const Footer = (props: Props) => {
             <Slide>
               <span className={`d-flex align-items-center ${styles.logo}`}>
                 <Image src="/icons/logo.svg" alt="" width={50} height={50} />
-                <span className="text-smcyber-primary ms-n2">SMCYBER</span>
+                <span className="text-smcyber-primary ms-n2">
+                  PLATFORMCYBER
+                </span>
               </span>
               <p className={styles.aboutUs}>
-                SMCyber is the only solution custom-built to specialize in
+                PlatformCyber is the only solution custom-built to specialize in
                 offering full social media account protection across all
                 platforms(facebook,twitter,instagram,tiktok,etc), with a single
                 AI powered detection and correlation engine for efficient

@@ -9,12 +9,12 @@ import React, { useState } from 'react'
 import { FormObjectT } from '../../utils/type'
 
 const ContactUs = () => {
-  init('1AsgDhUYxtL7OsjYZ')
+  init('EUEkJoJpRKpf6Rq1x')
   const options = [
-    { label: "Implementing SMCyber's WAAP Solution", value: 'solution' },
-    { label: 'A Career at SMCyber', value: 'career' },
+    { label: "Implementing PlatformCyber's WAAP Solution", value: 'solution' },
+    { label: 'A Career at PlatformCyber', value: 'career' },
     {
-      label: "Engaging with SMCyber's Support Team",
+      label: "Engaging with PlatformCyber's Support Team",
       value: 'support',
     },
     {
@@ -52,7 +52,7 @@ const ContactUs = () => {
     }
 
     templateParams = { ...templateParams, ...contactUsForm }
-    emailjs.send('service_okhi179', 'template_3e536ak', templateParams).then(
+    emailjs.send('service_4u0y851', 'template_dmd3spu', templateParams).then(
       () => {
         clearContactUsForm()
         setIsLoading(false)
