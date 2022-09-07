@@ -28,10 +28,3 @@ export interface FormObjectT {
   protecting?: undefined
   message?: undefined
 }
-
-export interface DemoFormT {
-  firstName: undefined
-  lastName: undefined
-  email: undefined
-  aboutUs: undefined
-}
