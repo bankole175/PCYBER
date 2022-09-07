@@ -65,6 +65,7 @@ export const useForm = () => {
 
     validate(event, name, val, label, required)
 
+    // @ts-ignore
     formObject[name as keyof typeof formObject] = val
   }
 
