@@ -10,11 +10,12 @@
 .service {
   background-color: #181e2e;
   border-radius: 0.5rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1.8rem;
+  padding: 1.5rem 1.2rem 1.5rem 1.8rem;
   position: relative;
   margin-top: 1.2rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  height: calc(25vh - 7px);
 }
 
 .icon {
@@ -30,5 +31,11 @@
 @media screen and (max-width: 600px) {
   .icon {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .service {
+    height: 100%;
   }
 }

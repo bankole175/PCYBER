@@ -14,7 +14,7 @@ export const statistics = [
   {
     id: 'incident',
     value: '10k+',
-    text: 'iIncidents detected and resolved',
+    text: 'Incidents detected and resolved',
     img: '/icons/incident.svg',
   },
   {

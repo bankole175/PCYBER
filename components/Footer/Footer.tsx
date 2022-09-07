@@ -69,6 +69,9 @@ const Footer = (props: Props) => {
               <p className="text-white">Our Services</p>
 
               <p className={styles.li}>Dark Web Monitoring</p>
+              <p className={styles.li}>
+                Account Hijacking Monitoring and Protection
+              </p>
               <p className={styles.li}>Security Awareness Training</p>
               <p className={styles.li}>24/7 Support Availability</p>
             </Slide>
@@ -78,7 +81,11 @@ const Footer = (props: Props) => {
               <div className={styles.mln20}>
                 <p className="text-white">Contact Us</p>
 
-                <Button onClick={() => goTo('/contact-us')}>Contact Us</Button>
+                <div className="text-nowrap">
+                  <Button onClick={() => goTo('/contact-us')}>
+                    Contact Us
+                  </Button>
+                </div>
               </div>
             </Slide>
           </Col>
