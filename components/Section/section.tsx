@@ -1,12 +1,13 @@
 import { Col, Container, Row } from 'react-bootstrap'
 import styles from './section.module.css'
 import { Zoom } from 'react-awesome-reveal'
+import Image from 'next/image'
 
 type Props = {
   img: string
   title: string
   bg: string
-  listItems: Array<string>
+  listItems: Array<any>
 }
 
 const Section = (props: Props) => {
@@ -27,13 +28,21 @@ const Section = (props: Props) => {
           </Col>
           <Col lg={6}>
             <p className={`mb-5 ${styles.title}`}>{title}</p>
-            <ul className="">
-              {listItems.map((item, index) => (
-                <li key={index} className={styles.li}>
-                  {item}
-                </li>
+            <div className="">
+              {listItems.map((item) => (
+                <p key={item.id} className={styles.item}>
+                  <span className="me-2">
+                    <Image
+                      src={item.img}
+                      width={40}
+                      height={40}
+                      alt={item.text}
+                    />
+                  </span>
+                  {item.text}
+                </p>
               ))}
-            </ul>
+            </div>
           </Col>
         </Row>
       </Zoom>

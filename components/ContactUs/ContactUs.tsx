@@ -7,6 +7,7 @@ import { Zoom } from 'react-awesome-reveal'
 import emailjs, { init } from '@emailjs/browser'
 import React, { useState } from 'react'
 import { FormObjectT } from '../../utils/type'
+import { toast, ToastContainer } from 'react-toastify'
 
 const ContactUs = () => {
   init('EUEkJoJpRKpf6Rq1x')
@@ -55,10 +56,16 @@ const ContactUs = () => {
     emailjs.send('service_4u0y851', 'template_dmd3spu', templateParams).then(
       () => {
         clearContactUsForm()
+        toast.success('Form submitted successfully', {
+          position: 'top-right',
+        })
         setIsLoading(false)
       },
       (error) => {
         setIsLoading(false)
+        toast.error('Form submission failed', {
+          position: 'top-right',
+        })
         console.log(error.text)
       },
     )
@@ -66,6 +73,7 @@ const ContactUs = () => {
 
   return (
     <>
+      <ToastContainer />
       <Zoom>
         <h1 className={styles.title}>Contact Us</h1>
         <div className={styles.contactUs}>

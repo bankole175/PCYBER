@@ -8,7 +8,33 @@ import Section from '../components/Section'
 import AboutUs from '../components/AboutUs'
 import Footer from '../components/Footer'
 
-const listItems = ['Tiktok', 'Instagram', 'Facebook', 'Twitter', 'Web domains']
+const listItems = [
+  {
+    id: 1,
+    img: '/icons/tiktok.png',
+    text: 'Tiktok',
+  },
+  {
+    id: 2,
+    img: '/icons/instagram.png',
+    text: 'Instagram',
+  },
+  {
+    id: 3,
+    img: '/icons/facebook.png',
+    text: 'Facebook',
+  },
+  {
+    id: 4,
+    img: '/icons/twitter.png',
+    text: 'Twitter',
+  },
+  {
+    id: 5,
+    img: '/icons/tiktok.png',
+    text: 'Web domains',
+  },
+]
 const title =
   'AI powered engine to continuously block potential attacks and protect social media accounts across'
 
