@@ -31,7 +31,7 @@ const listItems = [
   },
   {
     id: 5,
-    img: '/icons/tiktok.png',
+    img: '/icons/web.svg',
     text: 'Web domains',
   },
 ]
