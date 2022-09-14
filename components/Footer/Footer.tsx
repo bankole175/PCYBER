@@ -62,6 +62,11 @@ const Footer = (props: Props) => {
                   <a className={styles.a}>About Us</a>
                 </Link>
               </p>
+              <p className={styles.li}>
+                <Link href="/privacy-policy">
+                  <a className={styles.a}>Privacy Policy</a>
+                </Link>
+              </p>
             </Slide>
           </Col>
           <Col lg={2} className="mb-3">
