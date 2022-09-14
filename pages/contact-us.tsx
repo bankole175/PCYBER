@@ -8,8 +8,8 @@ const ContactUsPage: NextPage = () => {
   return (
     <div className="home">
       <Head>
-        <title>PLATFORMCYBER</title>
-        <meta name="description" content="smcyber" />
+        <title>Contact Us - PLATFORMCYBER</title>
+        <meta name="description" content="Contact Us" />
         <link rel="icon" href="/icons/logo.svg" />
       </Head>
       <Header />

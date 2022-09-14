@@ -8,8 +8,8 @@ const PrivacyPolicy: NextPage = () => {
   return (
     <div className="home">
       <Head>
-        <title>PLATFORMCYBER</title>
-        <meta name="description" content="PLATFORMCYBER" />
+        <title>Privacy Policy - PLATFORMCYBER</title>
+        <meta name="description" content="Privacy Policy" />
         <link rel="icon" href="/icons/logo.svg" />
       </Head>
       <Header />
