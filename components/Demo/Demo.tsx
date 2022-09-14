@@ -57,6 +57,7 @@ const Demo = () => {
           position: 'top-right',
         })
         setIsLoading(false)
+        router.push('/')
       },
       (error) => {
         setIsLoading(false)

@@ -8,9 +8,12 @@ import emailjs, { init } from '@emailjs/browser'
 import React, { useState } from 'react'
 import { FormObjectT } from '../../utils/type'
 import { toast, ToastContainer } from 'react-toastify'
+import { useRouter } from 'next/router'
 
 const ContactUs = () => {
   init('EUEkJoJpRKpf6Rq1x')
+  const router = useRouter()
+
   const options = [
     { label: "Implementing PlatformCyber's WAAP Solution", value: 'solution' },
     { label: 'A Career at PlatformCyber', value: 'career' },
@@ -60,6 +63,7 @@ const ContactUs = () => {
           position: 'top-right',
         })
         setIsLoading(false)
+        router.push('/')
       },
       (error) => {
         setIsLoading(false)

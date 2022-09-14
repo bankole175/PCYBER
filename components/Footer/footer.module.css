@@ -25,6 +25,11 @@
   color: #ffffff;
 }
 
+.reserved {
+  text-align: center;
+  color: var(--platformcyberDirtyWhiteColor);
+}
+
 @media screen and (min-width: 1000px) {
   .mln20 {
     margin-left: -20px

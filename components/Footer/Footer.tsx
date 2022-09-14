@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styles from './footer.module.css'
 import Button from '../Button'
 import { useRouter } from 'next/router'
-import { Slide } from 'react-awesome-reveal'
+import { Slide, Zoom } from 'react-awesome-reveal'
 
 type Props = {
   noBackground?: boolean | undefined
@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
   }
   return (
     <div className={`${noBackground ? '' : 'gradient-dark'}`}>
-      <Container className="pt-section pb-5">
+      <Container className="pt-section pb-2">
         <Row className="justify-content-between">
           <Col lg={5} className="mb-3">
             <Slide>
@@ -90,6 +90,11 @@ const Footer = (props: Props) => {
             </Slide>
           </Col>
         </Row>
+        <Zoom>
+          <p className={styles.reserved}>
+            {new Date().getFullYear()} Platform Cyber Inc. All Right Reserved
+          </p>
+        </Zoom>
       </Container>
     </div>
   )
