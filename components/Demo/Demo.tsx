@@ -126,7 +126,7 @@ const Demo = () => {
                 name={'email'}
                 value={'email'}
                 placeholder={'johndoe@gmail.com'}
-                label={'Work Email'}
+                label={'Email'}
                 type={'email'}
                 required={true}
                 formObject={demoForm}
