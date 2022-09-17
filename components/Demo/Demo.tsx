@@ -12,9 +12,12 @@ import { toast, ToastContainer } from 'react-toastify'
 const Demo = () => {
   init('EUEkJoJpRKpf6Rq1x')
   const options = [
-    { label: 'API', value: 'api' },
-    { label: 'Web Application', value: 'webApplication' },
-    { label: ' API & Web Application', value: 'apiWebApplication' },
+    { label: 'Social media account', value: 'socialMedia' },
+    { label: 'Website', value: 'website' },
+    {
+      label: 'Social media account and website',
+      value: 'socialMediaAndWebsite',
+    },
   ]
 
   const demoForm: FormObjectT = {

@@ -15,11 +15,11 @@ const ContactUs = () => {
   const router = useRouter()
 
   const options = [
-    { label: "Implementing PlatformCyber's WAAP Solution", value: 'solution' },
-    { label: 'A Career at PlatformCyber', value: 'career' },
+    { label: 'Protecting my social media accounts', value: 'socialMedia' },
+    { label: 'Protecting my website', value: 'website' },
     {
-      label: "Engaging with PlatformCyber's Support Team",
-      value: 'support',
+      label: 'Protecting both social media accounts and my website',
+      value: 'both',
     },
     {
       label: 'Other',
@@ -33,11 +33,13 @@ const ContactUs = () => {
     email: undefined,
     phoneNumber: undefined,
     interest: undefined,
+    other: undefined,
     aboutUs: undefined,
     message: undefined,
   }
 
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [selectedValue, setSelectedValue] = useState<string | undefined>()
 
   const clearContactUsForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(
@@ -153,6 +155,17 @@ const ContactUs = () => {
                 options={options}
                 formObject={contactUsForm}
               />
+              {selectedValue === 'Other' && (
+                <TextField
+                  id={'other'}
+                  name={'other'}
+                  label={'Tell us what it is'}
+                  type={'text'}
+                  value={'other'}
+                  formObject={contactUsForm}
+                  required={false}
+                />
+              )}
               <TextField
                 id={'aboutUs'}
                 name={'aboutUs'}

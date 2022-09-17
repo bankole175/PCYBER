@@ -27,4 +27,5 @@ export interface FormObjectT {
   learn?: undefined
   protecting?: undefined
   message?: undefined
+  other?: undefined
 }

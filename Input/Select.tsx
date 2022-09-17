@@ -13,7 +13,7 @@ interface Props extends React.ComponentProps<'select'> {
 }
 
 export const SelectInput = (props: Props) => {
-  const { required, label, options, isMulti = false, formObject, id } = props
+  let { required, label, options, isMulti = false, formObject, id } = props
 
   const handleChange = (event: SingleValue<any>) => {
     formObject[id as keyof typeof formObject] = event.label
