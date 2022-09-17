@@ -20,7 +20,6 @@ export const TextField: FC<InputT> = ({
         {required && '*'}
       </label>
       <input
-        value={formObject[value as keyof typeof formObject]}
         type={type}
         {...inputProps}
         onChange={(event) => handleChange(event, label, formObject, required)}
