@@ -44,6 +44,7 @@ const Home: NextPage = () => {
       <Head>
         <title>PLATFORM CYBER</title>
         <meta name="description" content="platformCyber" />
+        <meta name="LTF_verify" content="c7ca59687c1edf98a5540358bd53e4ca" />
         <link rel="icon" href="/icons/logo.svg" />
       </Head>
       <Header />
