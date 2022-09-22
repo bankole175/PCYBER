@@ -31,6 +31,7 @@ const RequestADemo: NextPage = () => {
             data-normal="000000"
             data-link="135d9e"
             target="_blank"
+            rel="noreferrer"
             id="LTF_live_website_visitor"
           >
             Website Counter
